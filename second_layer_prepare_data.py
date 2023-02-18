@@ -1,7 +1,6 @@
 import networkx as nx
 import torch
 from torch.utils.data import Dataset, DataLoader
-from torch.nn import functional as F
 
 class graphDataset(Dataset):
     def __init__(self, graph_list, label_list):

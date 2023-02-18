@@ -66,9 +66,6 @@ def train(model, train_dataloader, test_dataloader, optimizer, loss_fn, epoch, e
     f.close()
     return loss_hist
 
-
-
-
 if __name__ == '__main__':
     feature_df = pd.read_csv('data/change_color_df.csv')
     structure_df = pd.read_csv('data/graph_structure.csv')
