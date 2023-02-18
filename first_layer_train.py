@@ -51,15 +51,18 @@ def train(model, train_dataloader, test_dataloader, optimizer, loss_fn, epoch, e
     return loss_hist
 
 
+# pip install networkx==2.8.8
+# pip install matplotlib == 3.2.2
+# pip install -U scikit-learn
 if __name__ == '__main__':
+    # session: 1~13
+    # round數量不一定
     feature_df = pd.read_csv('data/graph_feature.csv')
     structure_df = pd.read_csv('data/graph_structure.csv')
 
     col = feature_df.columns.tolist()
     col.remove('color')
     new_col = ['color_red', 'color_black', 'color_green', 'color_blue'] + col
-
-
 
     ct = ColumnTransformer([('color', OneHotEncoder(), [3])], remainder='passthrough')
     feature_onehot = np.array(ct.fit_transform(feature_df))
